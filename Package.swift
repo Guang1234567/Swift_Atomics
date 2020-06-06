@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-        name: "SwiftAtomics",
+        name: "Swift_Atomics",
         products: [
-            .library(name: "SwiftAtomics", type: .dynamic, targets: ["SwiftAtomics"]),
+            .library(name: "Swift_Atomics", type: .dynamic, targets: ["SwiftAtomics"]),
             .library(name: "CAtomics", type: .dynamic, targets: ["CAtomics"]),
         ],
         targets: [
-            .target(name: "SwiftAtomics", dependencies: ["CAtomics"]),
+            .target(name: "SwiftAtomics",  dependencies: ["CAtomics"]),
             .testTarget(name: "SwiftAtomicsTests", dependencies: ["SwiftAtomics"]),
             .target(name: "CAtomics", dependencies: []),
             .testTarget(name: "CAtomicsTests", dependencies: ["CAtomics"]),

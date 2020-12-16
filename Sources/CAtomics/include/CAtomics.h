@@ -1,3 +1,8 @@
+
+// 2020-12-16
+// copy from :
+// https://github.com/FFmpeg/FFmpeg/blob/master/compat/atomics/win32/stdatomic.h
+
 //
 //  CAtomics.h
 //
@@ -21,7 +26,11 @@
 #error This module relies on compiler support for the nullability attribute
 #endif
 
+#if _WIN64 || _WIN32
+#include <stdatomic_compat_win32.h>
+#else
 #include <stdatomic.h>
+#endif
 #include <stdbool.h>
 #include <assert.h>
 
